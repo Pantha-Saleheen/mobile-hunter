@@ -51,7 +51,7 @@ const displayResult = mobiles => {
             const div = document.createElement('div');
             div.classList.add('col');
             div.innerHTML = `
-            <div class="card h-100 p-3">
+            <div onclick="displayItem(mobile)" class="card h-100 p-3">
                 <img class="w-50 h-75 mx-auto" src="${mobile.image}" class="card-img-top" alt="...">
                 <div class="card-body mt-3">
                 <h5 class="card-title">${mobile.phone_name}</h5>
@@ -59,7 +59,20 @@ const displayResult = mobiles => {
             </div>
             `;
             searchResult.appendChild(div);
-            console.log(mobile);
         });
     } 
+}
+
+const displayItem = (mobile) =>{
+    const div = document.createElement('div');
+    div.classList.add('col');
+    div.innerHTML = `
+    <div class="card h-100 p-3">
+    <img class="w-50 h-75 mx-auto" src="${mobile.image}" class="card-img-top" alt="...">
+    <div class="card-body mt-3">
+    <h5 class="card-title">${mobile.phone_name}</h5>
+    <div><span class="h6">Brand : </span><span>${mobile.brand}</span></div>
+    </div>
+    `;
+    clickedItem.appendChild(div);
 }
